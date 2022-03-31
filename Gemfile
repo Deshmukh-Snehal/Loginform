@@ -66,3 +66,6 @@ gem 'devise'
 
 # bootstrap gem
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+
+# jquery gem
+gem 'jquery-rails'
