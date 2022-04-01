@@ -69,3 +69,11 @@ gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 
 # jquery gem
 gem 'jquery-rails'
+
+# Omniauth gem
+gem 'omniauth'
+
+# Omniauth-twitter gem
+gem 'omniauth-twitter'
+
+gem 'carrierwave'
