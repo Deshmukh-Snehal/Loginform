@@ -272,6 +272,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  # twitter
+  config.omniauth :twitter, Rails.application.credentials.fetch(:twitter_api_public), Rails.application.credentials.fetch(:twitter_api_secret),
+  callback_url: "http://localhost:3000/users/auth/twitter/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -308,7 +311,4 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-
-  # twitter
-  config.omniauth :twitter, Rails.application.credentials.fetch((:twitter_api_public), Rails.application.credentials.fetch(:twitter_api_secret))
 end

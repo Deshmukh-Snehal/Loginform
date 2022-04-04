@@ -73,7 +73,9 @@ gem 'jquery-rails'
 # Omniauth gem
 gem 'omniauth'
 
-# Omniauth-twitter gem
-gem 'omniauth-twitter'
-
 gem 'carrierwave'
+gem "omniauth-twitter", "~> 1.4"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem "sidekiq", "~> 6.4"
+gem 'pry', '~> 0.13.1'

@@ -8,21 +8,26 @@ class User < ApplicationRecord
   enum role: [:admin, :user]    
   
   mount_uploader :profile, ProfileUploader   
-
+  
   def self.from_omniauth(auth)
     user = User.where(email: auth.info.email).first
     # Uncomment the section below if you want users to be created if they don't exist
     unless user
-      user = User.create(name: auth.info.name,
+      user = User.create(
         email: auth.info.email,
         password: Devise.friendly_token[0,20]
       )
     end
-    user.first_name = auth.info.name
+    binding.pry
+    user.username = auth.info.username
     user.image = auth.info.image
     user.uid = auth.uid
     user.provider = auth.provider
     user.save
     user
   end
+
+  def email_required?
+    false
+ end
 end
